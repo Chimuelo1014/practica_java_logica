@@ -1,34 +1,52 @@
-// Estructura básica para cumplir los criterios en NetBeans 8.2 sin usar ArrayList
-// Solo se usan vectores (arrays) y clases objetuales
-
 // ==================== Equipo.java ====================
+
+// Clase que representa un equipo de fútbol con estadísticas básicas
 public class Equipo {
+    // Nombre del equipo
     private String nombre;
+    // Puntos acumulados en el torneo
     private int puntos;
+    // Goles que el equipo ha anotado
     private int golesAFavor;
+    // Goles que el equipo ha recibido
     private int golesEnContra;
 
+    // Constructor que inicializa el equipo con su nombre y estadísticas en cero
     public Equipo(String nombre) {
-        this.nombre = nombre;
-        this.puntos = 0;
-        this.golesAFavor = 0;
-        this.golesEnContra = 0;
+        this.nombre = nombre; // Asigna el nombre proporcionado al equipo
+        this.puntos = 0; // Inicializa los puntos a 0
+        this.golesAFavor = 0; // Inicializa los goles a favor a 0
+        this.golesEnContra = 0; // Inicializa los goles en contra a 0
     }
 
+    // Devuelve el nombre del equipo
     public String getNombre() { return nombre; }
+
+    // Devuelve los puntos acumulados del equipo
     public int getPuntos() { return puntos; }
+
+    // Devuelve los goles a favor del equipo
     public int getGolesAFavor() { return golesAFavor; }
+
+    // Devuelve los goles en contra del equipo
     public int getGolesEnContra() { return golesEnContra; }
 
+    // Actualiza las estadísticas del equipo luego de un partido
     public void actualizarEstadisticas(int golesFavor, int golesContra) {
+        // Suma los goles a favor del partido actual al total del equipo
         golesAFavor += golesFavor;
+        // Suma los goles en contra del partido actual al total del equipo
         golesEnContra += golesContra;
+        // Si el equipo ganó el partido, suma 3 puntos
         if (golesFavor > golesContra) puntos += 3;
+        // Si el partido fue un empate, suma 1 punto
         else if (golesFavor == golesContra) puntos += 1;
+        // Si el equipo perdió, no suma puntos
     }
 
+    // Método para asignar un punto adicional en caso de victoria por penales
     public void sumarVictoriaPorPenales() {
-        puntos += 1; // opcional: se puede sumar un punto extra si se desea
+        puntos += 1; // Se puede ajustar dependiendo de las reglas del torneo
     }
 }
 
