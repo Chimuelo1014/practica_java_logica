@@ -1,5 +1,3 @@
-package torneo; // Define el paquete donde se encuentra la clase Partido
-
 import torneo.Equipo; // Importa la clase Equipo para usarla en Partido
 import java.util.Random; // Importa la clase Random para generación de números aleatorios
 
